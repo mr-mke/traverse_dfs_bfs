@@ -17,7 +17,7 @@ class graph{
             nodes[i]=new node();
         dfs_path= new Stack<Integer>();
         bfs_path= new Stack<Integer>();
-        nodes_to_visit = new integerQueue(number_of_nodes*number_of_nodes);
+        nodes_to_visit = new integerQueue(number_of_nodes);
     }
 	
     public void traverse_dfs(int node_num){
