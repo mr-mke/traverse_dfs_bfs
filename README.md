@@ -1,7 +1,7 @@
 # Traverse graph using dfs and bfs
 Traverse graph using dfs and bfs
 
-to run type java traverse then enter number of nodes then enter the adjancy matrix then enter the source node
+to run compile the program using javac traverse then type java traverse then enter number of nodes then enter the adjancy matrix then enter the source node
 
 or
 
