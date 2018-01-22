@@ -17,7 +17,7 @@ class graph{
             nodes[i]=new node();
         dfs_path= new Stack<Integer>();
         bfs_path= new Stack<Integer>();
-        nodes_to_visit = new integerQueue(number_of_nodes);
+        nodes_to_visit = new integerQueue(number_of_nodes*number_of_nodes);
     }
 	
     public void traverse_dfs(int node_num){
@@ -34,7 +34,19 @@ class graph{
     }    
     
 	public void traverse_bfs(int node_num){
-        
+        int current,i;
+        nodes_to_visit.insert(node_num);
+        while(!nodes_to_visit.isEmpty()){
+            current=nodes_to_visit.remove();
+            if(!nodes[current].visited()){
+                nodes[current].visit();
+                bfs_path.push(new Integer(current+1));
+                for(i=0;i<number_of_nodes;i++){
+                    if(adjacency_matrix[current][i] != 0 & !nodes[i].visited())
+                        nodes_to_visit.insert(i);
+                }
+            }
+        }
 	}
 
     public void print_dfs_path(){
