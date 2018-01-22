@@ -22,6 +22,11 @@ class traverse{
         System.out.println("The DFS Traversal for the graph is given by ");
         Graph.traverse_dfs(source);
         Graph.print_dfs_path();
+
+	System.out.println("The BFS Traversal for the graph is given by ");
+	Graph.traverse_bfs(source);
+	Graph.print_bfs_path();
+
         System.out.println("");
         scanner.close();
     }

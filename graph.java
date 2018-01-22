@@ -4,6 +4,7 @@ class graph{
     private node nodes[];
     private Stack<Integer> dfs_path;
     private Stack<Integer> bfs_path;
+    private integerQueue nodes_to_visit;
     private int number_of_nodes;
     private int adjacency_matrix[][];
 
@@ -15,8 +16,10 @@ class graph{
         for(i=0;i<number_of_nodes;i++)
             nodes[i]=new node();
         dfs_path= new Stack<Integer>();
+        bfs_path= new Stack<Integer>();
+        nodes_to_visit = new integerQueue(number_of_nodes);
     }
-
+	
     public void traverse_dfs(int node_num){
         int next=0;
         while(next != -1){
@@ -30,11 +33,20 @@ class graph{
         }
     }    
     
+	public void traverse_bfs(int node_num){
+        
+	}
+
     public void print_dfs_path(){
         System.out.println(dfs_path);
         reset_nodes();
     }
     
+    public void print_bfs_path(){
+        System.out.println(bfs_path);
+        reset_nodes();
+    }
+
     private int get_next_unvisited_node(int node_num){
         int i;
         for(i=0;i<number_of_nodes;i++){
@@ -43,7 +55,6 @@ class graph{
             }
         }
         return -1;
-        
     }
 
     private void reset_nodes(){
